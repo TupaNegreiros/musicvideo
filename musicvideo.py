@@ -6,17 +6,16 @@ import os
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, parse_qs
 import subprocess
+import json
 
-# Lidarr API configuration
-LIDARR_API_URL = "http://127.0.0.1:8686/api/v1"
-API_KEY = "{copy API from lidarr}"
+with open("config.json") as f:
+    config = json.load(f)
 
-# SQLite3 database configuration
-DB_FILE = "musicvideo.db"
-
-BASE_DOWNLOAD_PATH = "~/Music Videos"
-
-COOKIES_FILE = "~/youtube.com_cookies.txt"
+LIDARR_API_URL = config["lidarr_api_url"]
+API_KEY = config["api_key"]
+DB_FILE = config["db_file"]
+BASE_DOWNLOAD_PATH = config["base_download_path"]
+COOKIES_FILE = config["cookies_file"]
 
 def create_database():
     """
