@@ -1,0 +1,7 @@
+{
+  "lidarr_api_url": "http://127.0.0.1:8686/api/v1",
+  "api_key": "",
+  "db_file": "musicvideo.db",
+  "base_download_path": "~/Music Videos/",
+  "cookies_file": "youtube.com_cookies.txt"
+}
